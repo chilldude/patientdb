@@ -21,3 +21,5 @@ Install it as well:
 
 ## Running
 ``meteor``
+
+Navigate to `localhost:3000/admin` and upload `lpmockdata.csv` to populate the database with mock data.
