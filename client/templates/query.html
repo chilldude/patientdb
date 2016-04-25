@@ -1,0 +1,425 @@
+<template name="query">
+  <form id="form_new_query" class="new-query">
+    
+    <div class="form-container">
+
+      <div class="row">
+
+        <div class="seven columns">
+          <div class="form-content">
+            <!-- Base -->
+            <div class="cluster-container">
+              <div class="cluster-title">
+                <h5>Baseline Characteristics</h5>
+              </div>
+              <div class="input-cluster">
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Patient Type</h6>
+                  </div>
+                  <div class="input-group">
+                    <label for="age">Age Range</label>
+                    <input type="number" name="age_start" id="age" placeholder="From">
+                    <input type="number" name="age_end" id="age" placeholder="To">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="leukemia_type">Leukemia Type</label>
+                    <select class="select-leukemia-type" multiple="multiple" id="leukemia_type" style="width: 70%">
+                      <option value="AML">AML</option>
+                      <option value="MDS">MDS</option>
+                      <option value="CML">CML</option>
+                      <option value="ALL">ALL</option>
+                      <option value="CLL">CLL</option>
+                      <option value="MPN">MPN</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <label for="select-fab">FAB</label>
+                    <select class="select-fab" multiple="multiple" id="fab" style="width: 70%">
+                      <option value="CNML-1">CMNL-1</option>
+                      <option value="CNML-2">CMNL-2</option>
+                      <option value="M1">M1</option>
+                      <option value="M2">M2</option>
+                      <option value="M3">M3</option>
+                      <option value="M4">M4</option>
+                      <option value="M5">M5</option>
+                      <option value="M5a">M5a</option>
+                      <option value="M5b">M5b</option>
+                      <option value="M6">M6</option>
+                      <option value="M6a">M6a</option>
+                      <option value="M7">M7</option>
+                      <option value="RAEB-1">RAEB-1</option>
+                      <option value="RAEB-2">RAEB-2</option>
+                      <option value="RAEB-T">RAEB-T</option>
+                      <option value="Unk">Unknown</option>
+                    </select>
+                  
+
+                    <div class="input-group">
+                      <label for="ahd">Antecedent Hematological Disease</label>
+                      <input type="checkbox" name="ahd_yes" id="ahd" value=1> Yes
+                      <input type="checkbox" name="ahd_no" id="ahd" value=0> No
+                    </div>
+
+                    <div class="input-group">
+                      <input type="checkbox" name="taml" id="taml" value=1> Therapy Related AML
+                    </div>
+
+                    <div class="input-group">
+                      <label for="performance_status">Performance Status</label>
+                      <input type="checkbox" name="stat_0" id="ps" value=0> 0
+                      <input type="checkbox" name="stat_1" id="ps" value=1> 1
+                      <input type="checkbox" name="stat_2" id="ps" value=2> 2
+                      <input type="checkbox" name="stat_3" id="ps" value=3> 3
+                      <input type="checkbox" name="stat_4" id="ps" value=4> 4
+                    </div>
+
+                    <div class="input-group">
+                      <label for="patient_status">Status</label>
+                      <input type="checkbox" name="alive" id="status" value=1> Alive
+                      <input type="checkbox" name="dead" id="status" value=0> Dead
+                    </div>    
+                  </div>
+                </div>
+
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Prior Therapies</h6>
+                  </div>
+
+                  <div class="input-group">
+                    <label for="performance_status">Number of Prior Therapies</label>
+                    <input type="checkbox" name="rx_0" id="num_prior_rx" value=0> 0
+                    <input type="checkbox" name="rx_1" id="num_prior_rx" value=1> 1
+                    <input type="checkbox" name="rx_2" id="num_prior_rx" value=2> 2
+                    <input type="checkbox" name="rx_3" id="num_prior_rx" value=3> 3
+                    <input type="checkbox" name="rx_4" id="num_prior_rx" value=4> 4
+                    <input type="checkbox" name="rx_4" id="num_prior_rx" value=5> 5
+                  </div>
+
+                  <div class="input-group">
+                    <input type="checkbox" name="prior_cytotoxic" id="prior_cytotoxic" value=1> Prior Cytotoxic Rx
+                  </div>
+
+                  <div class="input-group">
+                    <input type="checkbox" name="prior_epigenetic" id="prior_epigenetic" value=1> Prior Epigenetic Rx
+                  </div>
+
+                  <div class="input-group">
+                    <input type="checkbox" name="prior_targeted" id="prior_targeted" value=1> Prior Targeted Rx
+                  </div>
+                </div>
+
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Cell Counts</h6>
+                  </div>
+
+                  <div class="input-group">
+                    <label for="wbc">White Blood Cells</label>
+                    <input type="number" name="wbc_min" id="wbc" placeholder="Min">
+                    <input type="number" name="wbc_max" id="wbc" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="blast">Blast Cells</label>
+                    <input type="number" name="blast_min" id="blast" placeholder="Min">
+                    <input type="number" name="blast_max" id="blast" placeholder="Max">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pathology -->
+            <div class="cluster-container">
+              <div class="cluster-title">
+                <h5>Pathology and Molecular</h5>
+              </div>
+              <div class="input-cluster">
+                
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Chromosomes</h6>
+                  </div>
+                  <div class="input-group">
+                    <input type="checkbox" name="complex_cg" id="complex_cg_2" value=1> Complex CGs with >2 Abnormalities
+
+                    <input type="checkbox" name="minus_5" id="minus_5" value=1> Any -5
+
+                    <input type="checkbox" name="minus_7" id="minus_7" value=1> Any -7
+
+                    <input type="checkbox" name="11q" id="a11q" value=1> Any 11q
+
+                    <input type="checkbox" name="inv16" id="inv16" value=1> Any inv16
+
+                    <input type="checkbox" name="plus_8" id="plus_8" value=1> Any t(8;21) or +8
+
+                    <input type="checkbox" name="only_diploid" id="only_diploid" value=1> Only diploid/normal
+
+                    <input type="checkbox" name="minus_y" id="minus_y" value=1> Any -Y
+
+                    <input type="checkbox" name="ph_plus" id="ph_plus" value=1> Any Ph+
+                  </div>
+
+                  <div class="input-group">
+                    <label for="mrc_2010">MRC 2010</label>
+                    <input type="checkbox" name="mrc_f" id="mrc_2010" value="F"> Favorable
+                    <input type="checkbox" name="mrc_i" id="mrc_2010" value="I"> Intermediate
+                    <input type="checkbox" name="mrc_a" id="mrc_2010" value="A"> Adverse
+                  </div>
+                </div>
+
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Flow Cytometry</h6>
+                  </div>
+                  <div class="input-group">
+                    <input type="checkbox" name="cd13" id="cd13" value=1> CD13
+
+                    <input type="checkbox" name="cd19" id="cd19" value=1> CD19
+
+                    <!-- temporary set cd33 and cd45 ids to check for existence -->
+
+                    <input type="checkbox" name="cd33" id="cd33_10" value=1> CD33
+
+                    <input type="checkbox" name="cd34" id="cd34_10" value=1> CD34
+
+                    <input type="checkbox" name="cd7" id="cd7" value=1> CD7
+
+                    <input type="checkbox" name="cd10" id="cd10" value=1> CD10
+
+                    <input type="checkbox" name="cd20" id="cd20" value=1> CD20
+
+                    <input type="checkbox" name="hla_dr" id="hla_dr" value=1> HLA-DR
+                  </div>
+                </div>
+
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Cell Histology</h6>
+                  </div>
+                  <div class="input-group">
+                    <input type="checkbox" name="dyplastic_g" id="dyplastic_g" value=1> Dyplastic G
+
+                    <input type="checkbox" name="dyplastic_m" id="dyplastic_m" value=1> Dyplastic M
+
+                    <input type="checkbox" name="dyplastic_e" id="dyplastic_e" value=1> Dyplastic E
+
+                    <input type="checkbox" name="auer_rods" id="auer_rods" value=1> Auer Rods
+
+                    <input type="checkbox" name="mds" id="mds" value=1> MDS related changes in final path diagnosis
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mutations -->
+            <div class="cluster-container">
+              <div class="cluster-title">
+                <h5>Mutations</h5>
+              </div>
+              <div class="input-cluster">
+                
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Mutated Genes</h6>
+                  </div>
+                  <div class="input-group">
+                    <label for="select-mutations">Specific Mutations</label>
+                    <select class="select-mutations" multiple="multiple" id="mutations" style="width: 70%">
+                      <option value="DNMT3A">DNMT3A</option>
+                      <option value="TP53">TP53</option>
+                      <option value="CEBPA">CEBPA</option>
+                      <option value="IDH1">IDH1</option>
+                      <option value="SRSF2">SRSF2</option>
+                      <option value="TET2">TET2</option>
+                      <option value="RUNX1">RUNX1</option>
+                      <option value="SF3B1">SF3B1</option>
+                      <option value="FLT3">FLT3</option>
+                      <option value="RAD21">RAD21</option>
+                      <option value="U2AF1">U2AF1</option>
+                      <option value="NRAS">NRAS</option>
+                      <option value="IDH2">IDH2</option>
+                      <option value="NPM1">NPM1</option>
+                      <option value="ASXL1">ASXL1</option>
+                      <option value="NF1">NF1</option>
+                      <option value="SETBP1">SETBP1</option>
+                      <option value="KDR">KDR</option>
+                      <option value="CBL">CBL</option>
+                      <option value="WT1">WT1</option>
+                      <option value="KRAS">KRAS</option>
+                      <option value="SM3">SM3</option>
+                      <option value="CBFB_MYH11">CBFB_MYH11</option>
+                      <option value="KIT">KIT</option>
+                      <option value="JAK2">JAK2</option>
+                      <option value="BCR_ABL1">BCR_ABL1</option>
+                      <option value="PHF6">PHF6</option>
+                      <option value="SMO">SMO</option>
+                      <option value="ATM">ATM</option>
+                      <option value="GATA2">GATA2</option>
+                      <option value="EZH2">EZH2</option> 
+                      <option value="ZRSR2">ZRSR2</option>
+                      <option value="PML_RARA">PML_RARA</option>
+                      <option value="EGFR">EGFR</option>
+                      <option value="PTPN11">PTPN11</option>
+                      <option value="APC">APC</option>
+                      <option value="BCOR">BCOR</option>
+                      <option value="SM1A">SM1A</option>
+                      <option value="FGFR2">FGFR2</option>
+                      <option value="STAG2">STAG2</option>
+                      <option value="RUNX1_RUNX1T">RUNX1_RUNX1T</option>
+                      <option value="ETV6_RUNX1">ETV6_RUNX1</option>
+                      <option value="MLH1">MLH1</option>
+                      <option value="KMT2A">KMT2A</option>
+                      <option value="NOTCH1">NOTCH1</option>
+                      <option value="MPL">MPL</option> 
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <label for="num_mutations">Number of Mutated Genes</label>
+                    <input type="number" name="num_mutations_min" id="num_mutations" placeholder="Min">
+                    <input type="number" name="num_mutations_max" id="num_mutations" placeholder="Max">
+                  </div>
+                </div>
+
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Number of Genes Mutated in Each Category</h6>
+                  </div>
+                  <div class="input-group">
+                    <label for="methylation">Methylation</label>
+                    <input type="number" name="methylation_min" id="num_methylation" placeholder="Min">
+                    <input type="number" name="methylation_max" id="num_methylation" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="tumor">Tumor Suppressor Genes</label>
+                    <input type="number" name="tumor_min" id="num_tumor" placeholder="Min">
+                    <input type="number" name="tumor_max" id="num_tumor" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="myeloid">Myeloid Transcription Factors</label>
+                    <input type="number" name="myeloid_min" id="num_myeloid" placeholder="Min">
+                    <input type="number" name="myeloid_max" id="num_myeloid" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="spliceosome">Spliceosome Complex</label>
+                    <input type="number" name="spliceosome_min" id="num_spliceosome" placeholder="Min">
+                    <input type="number" name="spliceosome_max" id="num_spliceosome" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="activated_signaling">Activated Signaling</label>
+                    <input type="number" name="activated_signaling_min" id="num_activated_signaling" placeholder="Min">
+                    <input type="number" name="activated_signaling_max" id="num_activated_signaling" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="cohesin">Cohesin Complex</label>
+                    <input type="number" name="cohesin_min" id="num_cohesin" placeholder="Min">
+                    <input type="number" name="cohesin_max" id="num_cohesin" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="nucleophosmin">Nucleophosmin/Nucleolar</label>
+                    <input type="number" name="nucleophosmin_min" id="num_nucleophosmin" placeholder="Min">
+                    <input type="number" name="nucleophosmin_max" id="num_nucleophosmin" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="chromatin">Chromatin Modification</label>
+                    <input type="number" name="chromatin_min" id="num_chromatin" placeholder="Min">
+                    <input type="number" name="chromatin_max" id="num_chromatin" placeholder="Max">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="transcription">Transcription Factor Fusions</label>
+                    <input type="number" name="transcription_min" id="num_transcription" placeholder="Min">
+                    <input type="number" name="transcription_max" id="num_transcription" placeholder="Max">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Treatment -->
+            <div class="cluster-container">
+              <div class="cluster-title">
+                <h5>Treatment</h5>
+              </div>
+              <div class="input-cluster">
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Type</h6>
+                  </div>
+                  <div class="input-group">
+                    <label for="current_cytotoxic">Current Cytotoxic Treatment</label>
+                    <input type="checkbox" name="current_cytotoxic_yes" id="current_cytotoxic" value=1> Yes
+                    <input type="checkbox" name="current_cytotoxic_no" id="current_cytotoxic" value=0> No
+                    <input type="checkbox" name="current_cytotoxic_unk" id="current_cytotoxic" value="UNK"> Unknown
+                  </div>
+
+                  <div class="input-group">
+                    <label for="current_epigenetic">Current Epigenetic Treatment</label>
+                    <input type="checkbox" name="current_epigenetic_yes" id="current_epigenetic" value=1> Yes
+                    <input type="checkbox" name="current_epigenetic_no" id="current_epigenetic" value=0> No
+                    <input type="checkbox" name="current_epigenetic_unk" id="current_epigenetic" value="UNK"> Unknown
+                  </div>
+
+                  <div class="input-group">
+                    <label for="current_targeted">Current Targeted Treatment</label>
+                    <input type="checkbox" name="current_targeted_yes" id="current_targeted" value=1> Yes
+                    <input type="checkbox" name="current_targeted_no" id="current_targeted" value=0> No
+                    <input type="checkbox" name="current_targeted_unk" id="current_targeted" value="UNK"> Unknown
+                  </div>
+                </div>
+                <div class="input-subcluster">
+                  <div class="input-category">
+                    <h6>Response</h6>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="remissions_stat">Remission Status</label>
+                    <input type="checkbox" name="remission_yes" id="cr_status" value=1> CR/CRi/CRp
+                    <input type="checkbox" name="remission_no" id="cr_status" value=0> Not CR/CRi/CRp
+                    <input type="checkbox" name="remission_unk" id="cr_status" value="NA"> Not Assessed
+                  </div>
+
+                  <div class="input-group">
+                    <label for="courses_to_response">Courses to Response</label>
+                    <input type="checkbox" name="course_0" id="courses_to_response" val=0> 0
+                    <input type="checkbox" name="course_1" id="courses_to_response" val=1> 1
+                    <input type="checkbox" name="course_2" id="courses_to_response" val=2> 2
+                    <input type="checkbox" name="course_3" id="courses_to_response" val=3> 3
+                    <input type="checkbox" name="course_4" id="courses_to_response" val=4> 4
+                    <input type="checkbox" name="course_4" id="courses_to_response" val=5> 5
+                    <input type="checkbox" name="course_4" id="courses_to_response" val=6> 5+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="five columns">
+
+
+          <div class="form-submit">
+            <!--
+            <div class="summary">
+              <span>{{entriesCount}} entries found</span>
+            </div>
+          -->
+            <button class="btn-submit btn">Generate Report</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </form>
+</template>

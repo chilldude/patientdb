@@ -1,0 +1,249 @@
+<template name="admin">
+  <h1>Upload New Data</h1>
+  <button type="button" class="btn btn-file">
+    Import CSV <input type="file" class="csv_data" name="csv_data" value=""/>
+  </button>
+
+  <br>
+
+  <div class="table_container">
+    <table class="table table-bordered table-hover table-stripes">
+    	<thead>
+    		<th>PID</th>
+    		<th>Age</th>
+    		<th>Leukemia Type</th>
+    		<th>Number of Prior Rx</th>
+    		<th>Prior Cytotoxic Rx</th>
+    		<th>Prior Epigenetic Rx</th>
+    		<th>Prior Targeted</th>
+    		<th>Complex CGs with >2 Abnormalities</th>
+    		<th>-5</th>
+    		<th>-7</th>
+    		<th>11q</th>
+    		<th>inv16</th>
+    		<th>+8</th>
+    		<th>Only Diploid</th>
+    		<th>-Y</th>
+    		<th>ph+</th>
+    		<th>MRC 2010</th>
+    		<th>Dysplastic G</th>
+    		<th>Dysplastic M</th>
+    		<th>Dysplastic E</th>
+    		<th>Auer Rods</th>
+    		<th>WBC</th>
+    		<th>Blast</th>
+    		<th>FAB</th>
+    		<th>PS</th>
+    		<th>AHD</th>
+    		<th>MDS</th>
+    		<th>tAML</th>
+    		<th>CC13</th>
+    		<th>CD19</th>
+    		<th>CD33</th>
+    		<th>CD33 >10</th>
+    		<th>CD33 >50</th>
+    		<th>CD33 > 90</th>
+    		<th>CD34</th>
+    		<th>CD34 >10</th>
+    		<th>CD34 >50</th>
+    		<th>CD34 >90</th>
+    		<th>CD7</th>
+    		<th>CD10</th>
+    		<th>CD20</th>
+    		<th>HLA_DR</th>
+    		<th>Current Cytotoxic</th>
+    		<th>Current Epigenetic</th>
+    		<th>Current Targeted</th>
+    		<th>Response Code</th>
+    		<th>CR Status</th>
+    		<th>Courses to Response</th>
+    		<th>Off Study Reason Code</th>
+    		<th>Status</th>
+    		<th>Number of Mutations</th>
+    		<th>OS</th>
+    		<th>OS Censor</th>
+    		<th>RFS</th>
+    		<th>RFS Censor</th>
+    		<th>EFS</th>
+    		<th>EFS Censor</th>
+    		<th>DNMT3A</th>
+    		<th>TP53</th>
+    		<th>CEBPA</th>
+    		<th>IDH1</th>
+    		<th>SRSF2</th>
+    		<th>TET2</th>
+    		<th>RUNX1</th>
+    		<th>SF3B1</th>
+    		<th>FLT3</th>
+    		<th>RAD21</th>
+    		<th>U2AF1</th>
+    		<th>NRAS</th>
+    		<th>IDH2</th>
+    		<th>NPM1</th>
+    		<th>ASXL1</th>
+        <th>NF1</th>
+        <th>SETBP1</th>
+        <th>KDR</th>
+        <th>CBL</th>
+        <th>WT1</th>
+        <th>KRAS</th>
+        <th>SMC3</th>
+        <th>CBFB_MYH11</th>
+        <th>KIT</th>
+        <th>JAK2</th>
+        <th>BCR_ABL1</th>
+        <th>PHF6</th>
+        <th>SMO</th>
+        <th>ATM</th>
+        <th>GATA2</th>
+        <th>EZH2</th>
+        <th>ZRSR2</th>
+        <th>PML_RARA</th>
+        <th>EGFR</th>
+        <th>PTPN11</th>
+        <th>APC</th>
+        <th>BCOR</th>
+        <th>SMC1A</th>
+        <th>FGFR2</th>
+        <th>STAG2</th>
+        <th>RUNX1_RUNX1T</th>
+        <th>ETV6_RUNX1</th>
+        <th>MLH1</th>
+        <th>KMT2A</th>
+        <th>NOTCH1</th>
+        <th>MPL</th>
+        <th>Num Methylation</th>
+        <th>Num Tumor</th>
+        <th>Num Myeloid</th>
+        <th>Num Spliceosome</th>
+        <th>Num Activated Signaling</th>
+        <th>Num Cohesin</th>
+        <th>Num Nucleophosmin</th>
+        <th>Num Chromatin</th>
+        <th>Num Transcription</th>
+    	</thead>
+      <tbody>
+        {{#each patients}}
+          {{>patient}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="patient">
+  <tr>
+    <td>{{pid}}</td>
+    <td>{{age}}</td>
+    <td>{{leukemia_type}}</td>
+    <td>{{prior_rx}}</td>
+    <td>{{prior_cytotoxic}}</td>
+    <td>{{prior_epigenetic}}</td>
+    <td>{{prior_targeted}}</td>
+    <td>{{complex_cg_2}}</td>
+    <td>{{minus_5}}</td>
+    <td>{{minus_7}}</td>
+    <td>{{a11q}}</td>
+    <td>{{inv16}}</td>
+    <td>{{plus_8}}</td>
+    <td>{{only_diploid}}</td>
+    <td>{{minus_y}}</td>
+    <td>{{ph_plus}}</td>
+    <td>{{mrc_2010}}</td>
+    <td>{{dysplastic_g}}</td>
+    <td>{{dysplastic_m}}</td>
+    <td>{{dysplastic_e}}</td>
+    <td>{{auer_rods}}</td>
+    <td>{{wbc}}</td>
+    <td>{{blast}}</td>
+    <td>{{fab}}</td>
+    <td>{{ps}}</td>
+    <td>{{ahd}}</td>
+    <td>{{mds}}</td>
+    <td>{{taml}}</td>
+    <td>{{cd13}}</td>
+    <td>{{cd19}}</td>
+    <td>{{cd33}}</td>
+    <td>{{cd33_10}}</td>
+    <td>{{cd33_50}}</td>
+    <td>{{cd33_90}}</td>
+    <td>{{cd34}}</td>
+    <td>{{cd34_10}}</td>
+    <td>{{cd34_50}}</td>
+    <td>{{cd34_90}}</td>
+    <td>{{cd7}}</td>
+    <td>{{cd10}}</td>
+    <td>{{cd20}}</td>
+    <td>{{hla_dr}}</td>
+    <td>{{current_cytotoxic}}</td>
+    <td>{{current_epigenetic}}</td>
+    <td>{{current_targeted}}</td>
+    <td>{{response_code}}</td>
+    <td>{{cr_status}}</td>
+    <td>{{courses_to_response}}</td>
+    <td>{{off_study_reason_code}}</td>
+    <td>{{status}}</td>
+    <td>{{num_mutations}}</td>
+    <td>{{os}}</td>
+    <td>{{os_censor}}</td>
+    <td>{{rfs}}</td>
+    <td>{{rfs_censor}}</td>
+    <td>{{efs}}</td>
+    <td>{{efs_censor}}</td>
+    <td>{{mutations.DNMT3A}}</td>
+    <td>{{mutations.TP53}}</td>
+    <td>{{mutations.CEBPA}}</td>
+    <td>{{mutations.IDH1}}</td>
+    <td>{{mutations.SRSF2}}</td>
+    <td>{{mutations.TET2}}</td>
+    <td>{{mutations.RUNX1}}</td>
+    <td>{{mutations.SF3B1}}</td>
+    <td>{{mutations.FLT3}}</td>
+    <td>{{mutations.RAD21}}</td>
+    <td>{{mutations.U2AF1}}</td>
+    <td>{{mutations.NRAS}}</td>
+    <td>{{mutations.IDH2}}</td>
+    <td>{{mutations.NPM1}}</td>
+    <td>{{mutations.ASXL1}}</td>
+    <td>{{mutations.NF1}}</td>
+    <td>{{mutations.SETBP1}}</td>
+    <td>{{mutations.KDR}}</td>
+    <td>{{mutations.CBL}}</td>
+    <td>{{mutations.WT1}}</td>
+    <td>{{mutations.KRAS}}</td>
+    <td>{{mutations.SMC3}}</td>
+    <td>{{mutations.CBFB_MYH11}}</td>
+    <td>{{mutations.KIT}}</td>
+    <td>{{mutations.JAK2}}</td>
+    <td>{{mutations.BCR_ABL1}}</td>
+    <td>{{mutations.PHF6}}</td>
+    <td>{{mutations.SMO}}</td>
+    <td>{{mutations.ATM}}</td>
+    <td>{{mutations.GATA2}}</td>
+    <td>{{mutations.EZH2}}</td>
+    <td>{{mutations.ZRSR2}}</td>
+    <td>{{mutations.PML_RARA}}</td>
+    <td>{{mutations.EGFR}}</td>
+    <td>{{mutations.PTPN11}}</td>
+    <td>{{mutations.APC}}</td>
+    <td>{{mutations.BCOR}}</td>
+    <td>{{mutations.SMC1A}}</td>
+    <td>{{mutations.FGFR2}}</td>
+    <td>{{mutations.STAG2}}</td>
+    <td>{{mutations.RUNX1_RUNX1T}}</td>
+    <td>{{mutations.ETV6_RUNX1}}</td>
+    <td>{{mutations.MLH1}}</td>
+    <td>{{mutations.KMT2A}}</td>
+    <td>{{mutations.NOTCH1}}</td>
+    <td>{{mutations.MPL}}</td>
+    <td>{{num_methylation}}</td>
+    <td>{{num_tumor}}</td>
+    <td>{{num_myeloid}}</td>
+    <td>{{num_spliceosome}}</td>
+    <td>{{num_activated_signaling}}</td>
+    <td>{{num_cohesin}}</td>
+    <td>{{num_nucleophosmin}}</td>
+    <td>{{num_chromatin}}</td>
+    <td>{{num_transcription}}</td>
+  </tr>
+</template>

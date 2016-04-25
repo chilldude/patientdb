@@ -1,0 +1,41 @@
+<head>
+  <title>PatientDB</title>
+  <style>
+
+
+  </style>
+</head>
+
+<body>
+  {{> mainLayout}}
+</body>
+
+<template name="mainLayout">
+  {{> header}}
+  {{> nav}}
+  <div class="container" id="main">
+
+      {{#momentum plugin='flow-router'}}
+        {{> Template.dynamic template=content}}
+      {{/momentum}}
+
+
+  </div>
+</template>
+
+<template name="header">
+	<header>
+		<div id="header_logo">
+			<h1><a href="/">PatientDB</a></h1>
+		</div>
+    <button class="btn btn-header btn-new-query">
+      New Query
+    </button>
+    <div class="login-wrapper">
+      {{> loginButtons}}
+    </div>
+	</header>
+</template>
+
+<template name="nav">
+</template>

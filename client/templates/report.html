@@ -1,0 +1,43 @@
+<template name="report">
+	<div class="row">
+		<div class="twelve columns">
+		  <div class="report-container">
+		  	<div class="report-cluster-container">
+			  	<div class="report-title">
+			  		<h5>Survival Analysis</h5>
+			  	</div>
+			  	<div class="report-cluster">
+			  		{{> km}}
+			  	</div>
+			</div>
+		  </div>
+		  <!--
+		  <div class="report-container">
+		  	<div class="report-cluster-container">
+		  		<div class="report-title">
+		  			<h5>Mutations</h5>
+		  		</div>
+		  		<div class="report-cluster">
+		  			{{> mutationsChart}}
+		  		</div>
+		  	</div>
+		  </div>
+		  -->
+		</div>
+	</div>
+  <!-- uncomment for dev -->
+  <!--{{> dev}}-->
+</template>
+
+<!--
+<template name="dev">
+	<div class="data-log">
+		<a href="#" class="hide-dev">{{toggleLog}}</a>
+		<div class="log-data">
+			{{#each datapoints}}
+				<p>{{pid}}, {{os}}, {{os_censor}}</p>
+			{{/each}}
+		</div>
+	</div>
+</template>
+-->
